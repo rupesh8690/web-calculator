@@ -24,15 +24,29 @@ oprBtn.forEach((opr) => {
 } );
 
 equal.addEventListener("click", () =>{
-    try {
-        // Use eval to evaluate the expression and set the result in the input box
-        inputBox.value = eval(inputBox.value);
-      } catch (error) {
-        // Handle errors, e.g., if the expression is not valid
-        inputBox.value = "Error";
-      }
-
+  calculateResult();
+   
 });
+
+// Add keydown event listener for the input box
+inputBox.addEventListener("keydown", (event) => {
+  // Check if the pressed key is Enter (key code 13)
+  if (event.key === "Enter") {
+      calculateResult();
+  }
+});
+
+function calculateResult()
+{
+  try {
+    // Use eval to evaluate the expression and set the result in the input box
+    inputBox.value = eval(inputBox.value);
+  } catch (error) {
+    // Handle errors, e.g., if the expression is not valid
+    inputBox.value = "Error";
+  }
+
+}
 
 clear.addEventListener("click", () => {
     inputBox.value=" ";

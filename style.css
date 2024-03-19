@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body{
+    overflow-x: hidden;
+}
 .container{
     width: 100%;
     height: 100vh;
@@ -20,6 +23,7 @@
 
 .box
 {
+    box-sizing: border-box;
     width: 400px;
   
     position: relative;
@@ -33,7 +37,7 @@
 }
 .box input
 {
-    width: 99%;
+    width: 100%;
     font-size: 18px;
     font-weight: 600;
     outline: none;
@@ -41,9 +45,15 @@
 
 }
 
+.box div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
 .box button{
     width: 76px;
+    
     padding: 10px;
     font-size: 18px;
     font-weight: 600;
